@@ -1,10 +1,21 @@
 const removeFromArray = function (arrayItem, ...moreArguments) {
 
-    const elementsToRemove = new Set(moreArguments);
-    const newArray = arrayItem.filter((items) => {
-        return !elementsToRemove.has(items);
+    // const elementsToRemove = new Set(moreArguments);
+    // const newArray = arrayItem.filter((items) => {
+    //     return !elementsToRemove.has(items);
+    // });
+    // console.log(newArray);
+    // return newArray;
+
+    //alternate method only using arrays, no sets
+    const newArray = [];
+
+    arrayItem.forEach(element => {
+        if (!moreArguments.includes(element)) {
+            newArray.push(element);
+        }
     });
-    console.log(newArray);
+
     return newArray;
 
 
